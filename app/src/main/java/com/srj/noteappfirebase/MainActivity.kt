@@ -1,34 +1,33 @@
 package com.srj.noteappfirebase
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.FirebaseFirestore
 
 
-class MainActivity : AppCompatActivity() {
-    var db = FirebaseFirestore.getInstance()
-    private val TAG: String = "MainActivity"
+class MainActivity : AppCompatActivity(), FirebaseInit {
+    val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val user = hashMapOf(
+            "first" to "Alan",
+            "middle" to "Mathison",
+            "last" to "Turing",
+            "born" to 1912
+        )
 
-        val user: MutableMap<String, Any> = HashMap()
-        user["first"] = "Ada"
-        user["last"] = "Lovelace"
-        user["born"] = 1815
-
-// Add a new document with a generated ID
-
-// Add a new document with a generated ID
         db.collection("users")
             .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(
-                    TAG,
-                    "DocumentSnapshot added with ID: " + documentReference.id
-                )
+            .addOnSuccessListener {
+                Toast.makeText(
+                    this@MainActivity, "User added successfully", Toast.LENGTH_SHORT
+                ).show()
             }
-            .addOnFailureListener { e -> Log.w(TAG, "Error adding document", e) }
+            .addOnFailureListener {
+                Toast.makeText(this@MainActivity, "User creation failed", Toast.LENGTH_SHORT)
+                    .show()
+
+            }
     }
 }
