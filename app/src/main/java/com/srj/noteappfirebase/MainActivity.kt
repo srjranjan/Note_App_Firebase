@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             .collection("UserDetails")
             .add(user)
             .addOnSuccessListener {
-                Log.d(TAG, "${it.get()}")
+                Log.d(TAG, "$it")
 
             }
             .addOnFailureListener {
