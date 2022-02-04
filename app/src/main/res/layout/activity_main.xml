@@ -10,6 +10,7 @@
         android:id="@+id/SignupFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:navGraph="@navigation/nav_graph"
         android:name="com.srj.noteappfirebase.SplashFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

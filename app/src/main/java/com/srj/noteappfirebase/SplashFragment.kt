@@ -1,11 +1,14 @@
 package com.srj.noteappfirebase
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,7 +43,22 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val directions: NavDirections = SplashFragmentDire
+
+        lateinit var navDirections: NavDirections
+        val auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
+        if (user != null) {
+            navDirections = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
+            findNavController().navigate(navDirections)
+
+
+        } else {
+            Handler().postDelayed({
+
+                navDirections = SplashFragmentDirections.actionSplashFragmentToLoginSignupFragment()
+                findNavController().navigate(navDirections)
+            }, 3000)
+        }
     }
 
     companion object {
