@@ -8,21 +8,21 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
-        android:layout_width="160dp"
         android:id="@+id/image_view"
-        android:clickable="true"
+        android:layout_width="160dp"
         android:layout_height="160dp"
         android:adjustViewBounds="true"
+        android:clickable="true"
         android:cropToPadding="true"
         android:fadingEdge="horizontal|vertical"
         android:fadingEdgeLength="20dp"
+        android:focusable="true"
         android:scaleType="fitCenter"
         android:src="@drawable/notes"
         app:circularflow_defaultRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:focusable="true"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
