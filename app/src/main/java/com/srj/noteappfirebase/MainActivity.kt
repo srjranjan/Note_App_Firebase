@@ -1,7 +1,6 @@
 package com.srj.noteappfirebase
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -21,16 +20,16 @@ class MainActivity : AppCompatActivity() {
         )
 
 // Add a new document with a generated ID
-        db.collection("users")
-            .document("Srjranjan")
-            .collection("UserDetails")
-            .add(user)
-            .addOnSuccessListener {
-                Log.d(TAG, "$it")
-
-            }
-            .addOnFailureListener {
-                Log.d(TAG, "${it.message}")
-            }
+//        db.collection("users")
+//            .document("Srjranjan")
+//            .collection("UserDetails")
+//            .add(user)
+//            .addOnSuccessListener {
+//                Log.d(TAG, "$it")
+//
+//            }
+//            .addOnFailureListener {
+//                Log.d(TAG, "${it.message}")
+//            }
     }
 }

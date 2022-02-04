@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SplashFragment">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/SignupFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.srj.noteappfirebase.SplashFragment"
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="160dp"
+
+        android:layout_height="160dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/notes"
+        app:circularflow_defaultRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
