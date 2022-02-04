@@ -1,10 +1,10 @@
 package com.srj.noteappfirebase
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -53,11 +53,16 @@ class SplashFragment : Fragment() {
 
 
         } else {
-            Handler().postDelayed({
-
-                navDirections = SplashFragmentDirections.actionSplashFragmentToLoginSignupFragment()
-                findNavController().navigate(navDirections)
-            }, 3000)
+            view.findViewById<ImageView>(R.id.image_view)
+                .setOnClickListener {
+                    navDirections =
+                        SplashFragmentDirections.actionSplashFragmentToLoginSignupFragment()
+                    findNavController().navigate(navDirections)
+                }
+//            Handler().postDelayed({
+//
+//
+//            }, 3000)
         }
     }
 
