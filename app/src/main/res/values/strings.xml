@@ -9,4 +9,8 @@
         easily</string>
     <string name="create_n_and_record_n_your_notes_n_easily">create \nand record \nyour notes \neasily</string>
     <string name="get_started">Get Started</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="hello_again">Hello Again!</string>
+    <string name="Password">Password</string>
+    <string name="welcome_back_you_ve_n_been_missed">Welcome back, you\'ve \n been missed</string>
 </resources>
