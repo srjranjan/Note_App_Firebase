@@ -109,7 +109,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/purple_500">
+        app:passwordToggleTint="@color/purple_500"
+        tools:targetApi="p">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"

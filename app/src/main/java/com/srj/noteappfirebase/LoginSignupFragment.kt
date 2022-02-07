@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,6 +37,29 @@ class LoginSignupFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login_signup, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val et_email = view.findViewById<EditText>(R.id.Email)
+        val et_password = view.findViewById<EditText>(R.id.password)
+        val submitbtn = view.findViewById<Button>(R.id.button)
+
+
+        submitbtn.setOnClickListener {
+            val email = et_email.text.toString()
+            val password = et_password.text.toString()
+
+            isValidEmail(email)
+        }
+
+
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return true
     }
 
     companion object {

@@ -50,12 +50,13 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             if (user != null) {
                 navDirections = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
+                navDirections.arguments.putString("username", user.toString())
                 findNavController().navigate(navDirections)
 
 
             } else {
                 navDirections =
-                    SplashFragmentDirections.actionSplashFragmentToLoginSignupFragment()
+                    SplashFragmentDirections.actionSplashFragmentToOnboardingFragment()
                 findNavController().navigate(navDirections)
 
             }

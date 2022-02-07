@@ -44,11 +44,9 @@
             app:destination="@id/onboardingFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_splashFragment_to_loginSignupFragment"
-            app:destination="@id/loginSignupFragment"
-            app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
+        <argument
+            android:name='"username"'
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
